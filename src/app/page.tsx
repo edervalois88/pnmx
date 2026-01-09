@@ -11,7 +11,6 @@ import FeaturesShowcase from '../components/FeaturesShowcase/FeaturesShowcase';
 import AboutSection from '../components/AboutSection/AboutSection';
 import UserJourney from '../components/UserJourney/UserJourney';
 import ROICalculator from '../components/ROICalculator/ROICalculator';
-import AISuite from '../components/AISuite/AISuite';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -22,13 +21,11 @@ export default function Home() {
       <Header />
       <main className={styles.main}>
         <Hero />
-
         <TrustBar />
         <FeaturesShowcase />
-        <AboutSection />
-        <AISuite />
-        <Solutions />
         <ROICalculator />
+        <AboutSection />
+        <Solutions />
         <UserJourney />
         <FeatureGrid />
       </main>

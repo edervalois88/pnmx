@@ -1,85 +1,124 @@
 'use client';
 
 import { useState } from 'react';
+import { TrendingUp, DollarSign, Users, Zap } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import styles from './ROICalculator.module.css';
 
 export default function ROICalculator() {
     const [attendees, setAttendees] = useState(5000);
-    const [ticket, setTicket] = useState(500);
+    const [avgSpend, setAvgSpend] = useState(500);
+
+    const reveal = useScrollReveal({ threshold: 0.2 });
 
     const formatMoney = (amount: number) => {
-        return '$' + amount.toLocaleString('es-MX', { maximumFractionDigits: 0 }) + ' MXN';
+        return '$' + amount.toLocaleString('es-MX', { maximumFractionDigits: 0 });
     };
 
-    const baseRevenue = attendees * ticket;
-    const uplift = baseRevenue * 0.30;
-    const total = baseRevenue + uplift;
+    const cashRevenue = attendees * avgSpend;
+    const cashlessUplift = cashRevenue * 0.30; // 30% increase
+    const totalRevenue = cashRevenue + cashlessUplift;
+    const savedTime = attendees * 0.5; // 30 seconds saved per transaction
 
     return (
         <section className={styles.section} id="calculator">
-            <div className={styles.container}>
-                <div>
-                    <h2 className={styles.title}>Calculadora de Impacto</h2>
-                    <p className={styles.subtitle}>
-                        Visualiza cuánto dinero estás dejando sobre la mesa por usar efectivo o tokens físicos.
+            <div className={styles.container} ref={reveal.ref}>
+                {/* Header */}
+                <div className={`${styles.header} ${reveal.isVisible ? styles.visible : ''}`}>
+                    <div className={styles.badge}>Calculadora de Impacto</div>
+                    <h2 className={styles.title}>
+                        Descubre el Potencial <br />
+                        de Tu Evento
+                    </h2>
+                    <p className={styles.description}>
+                        Calcula cuánto puedes aumentar tus ingresos y mejorar la experiencia
+                        de tus asistentes con pagos sin efectivo.
                     </p>
-                    <div className={styles.benefitList}>
-                        <div className={styles.benefitItem}>
-                            <span className={styles.benefitIcon}>↑</span>
-                            <span>Velocidad de barra <strong>3x</strong></span>
-                        </div>
-                        <div className={styles.benefitItem}>
-                            <span className={styles.benefitIcon}>↓</span>
-                            <span>Costos operativos <strong>-40%</strong></span>
-                        </div>
-                    </div>
                 </div>
 
-                <div className={styles.calculatorCard}>
-                    <div className={styles.inputGroup}>
-                        <div className={styles.labelRow}>
-                            <span className={styles.label}>Asistentes</span>
-                            <span className={styles.value}>{attendees.toLocaleString()}</span>
+                {/* Calculator Grid */}
+                <div className={`${styles.calculatorGrid} ${reveal.isVisible ? styles.visible : ''}`}>
+                    {/* Left Side - Inputs */}
+                    <div className={styles.inputsSection}>
+                        <div className={styles.inputCard}>
+                            <div className={styles.inputHeader}>
+                                <Users size={24} color="#04AEF0" />
+                                <span className={styles.inputLabel}>Número de Asistentes</span>
+                            </div>
+                            <div className={styles.inputValue}>{attendees.toLocaleString()}</div>
+                            <input
+                                type="range"
+                                min="500"
+                                max="50000"
+                                step="500"
+                                value={attendees}
+                                onChange={(e) => setAttendees(Number(e.target.value))}
+                                className={styles.slider}
+                            />
                         </div>
-                        <input
-                            type="range"
-                            min="500"
-                            max="50000"
-                            step="500"
-                            value={attendees}
-                            onChange={(e) => setAttendees(Number(e.target.value))}
-                            className={styles.slider}
-                        />
+
+                        <div className={styles.inputCard}>
+                            <div className={styles.inputHeader}>
+                                <DollarSign size={24} color="#04AEF0" />
+                                <span className={styles.inputLabel}>Gasto Promedio por Persona</span>
+                            </div>
+                            <div className={styles.inputValue}>{formatMoney(avgSpend)} MXN</div>
+                            <input
+                                type="range"
+                                min="100"
+                                max="3000"
+                                step="50"
+                                value={avgSpend}
+                                onChange={(e) => setAvgSpend(Number(e.target.value))}
+                                className={styles.slider}
+                            />
+                        </div>
                     </div>
 
-                    <div className={styles.inputGroup}>
-                        <div className={styles.labelRow}>
-                            <span className={styles.label}>Ticket Promedio</span>
-                            <span className={styles.value}>${ticket} MXN</span>
-                        </div>
-                        <input
-                            type="range"
-                            min="100"
-                            max="3000"
-                            step="50"
-                            value={ticket}
-                            onChange={(e) => setTicket(Number(e.target.value))}
-                            className={styles.slider}
-                        />
-                    </div>
+                    {/* Right Side - Results */}
+                    <div className={styles.resultsSection}>
+                        <div className={styles.resultCard}>
+                            <div className={styles.resultHeader}>
+                                <TrendingUp size={28} color="#04AEF0" />
+                                <span className={styles.resultTitle}>Tu Impacto con PouchNATION</span>
+                            </div>
 
-                    <div className={styles.resultBox}>
-                        <div className={styles.resultRow}>
-                            <span className={styles.resultLabel}>Ingresos Actuales</span>
-                            <span className={styles.resultVal}>{formatMoney(baseRevenue)}</span>
-                        </div>
-                        <div className={styles.resultRow}>
-                            <span className={styles.upliftText}>Uplift Cashless (+30%)</span>
-                            <span className={styles.upliftAmount}>+{formatMoney(uplift)}</span>
-                        </div>
-                        <div className={styles.totalRow}>
-                            <span className={styles.totalLabel}>Total Pouch</span>
-                            <span className={styles.totalAmount}>{formatMoney(total)}</span>
+                            <div className={styles.resultStats}>
+                                <div className={styles.statItem}>
+                                    <div className={styles.statLabel}>Ingresos con Efectivo</div>
+                                    <div className={styles.statValue}>{formatMoney(cashRevenue)} MXN</div>
+                                </div>
+
+                                <div className={styles.upliftStat}>
+                                    <div className={styles.upliftLabel}>
+                                        <Zap size={20} color="#10B981" />
+                                        Incremento Cashless (+30%)
+                                    </div>
+                                    <div className={styles.upliftValue}>+{formatMoney(cashlessUplift)} MXN</div>
+                                </div>
+
+                                <div className={styles.totalStat}>
+                                    <div className={styles.totalLabel}>Ingresos Totales Proyectados</div>
+                                    <div className={styles.totalValue}>{formatMoney(totalRevenue)} MXN</div>
+                                </div>
+                            </div>
+
+                            <div className={styles.benefits}>
+                                <div className={styles.benefitItem}>
+                                    <div className={styles.benefitIcon}>⚡</div>
+                                    <div>
+                                        <div className={styles.benefitTitle}>Velocidad 3x Mayor</div>
+                                        <div className={styles.benefitDesc}>Transacciones más rápidas</div>
+                                    </div>
+                                </div>
+                                <div className={styles.benefitItem}>
+                                    <div className={styles.benefitIcon}>💰</div>
+                                    <div>
+                                        <div className={styles.benefitTitle}>-40% Costos</div>
+                                        <div className={styles.benefitDesc}>Reducción operativa</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -64,7 +64,7 @@ export default function Header() {
                     Productos
                 </Link>
 
-                <Link href="#recursos" className={styles.navLink}>
+                <Link href="/recursos-ia" className={styles.navLink}>
                     <span className={styles.iconText}>⚡</span> Recursos IA
                 </Link>
 
