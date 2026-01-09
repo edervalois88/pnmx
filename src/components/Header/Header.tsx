@@ -3,11 +3,13 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../../context/ThemeContext';
 import styles from './Header.module.css';
 
 export default function Header() {
     const t = useTranslations('Navigation');
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <header className={styles.header}>
@@ -42,6 +44,17 @@ export default function Header() {
             </nav>
 
             <div className={styles.actions}>
+                <button
+                    onClick={toggleTheme}
+                    className={`${styles.button} ${styles.themeToggle}`}
+                    aria-label="Toggle Theme"
+                >
+                    {theme === 'dark' ? (
+                        <Sun size={20} color="#fff" />
+                    ) : (
+                        <Moon size={20} color="#000" />
+                    )}
+                </button>
                 <button className={`${styles.button} ${styles.langSwitch}`}>ES / EN</button>
                 <Link href="#contact" className={`${styles.button} ${styles.primaryButton}`}>
                     {t('bookDemo')}

@@ -25,7 +25,7 @@
 
 /* Add this var to light theme in globals if needed, 
    or just handle logic here if we had css vars for logo inversion */
-[data-theme='light'] .logoImage {
+:global(html[data-theme='light']) .logoImage {
   filter: invert(1);
   /* Hacky but works for white logos to black */
 }
