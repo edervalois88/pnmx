@@ -1,9 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
+// OpenAI client initialized inside handler to prevent build errors
 
 const SYSTEM_PROMPT = `Eres el Asistente Virtual Experto de PouchNATION (LatAm), diseñado para ayudar a organizadores de eventos, dueños de venues y desarrolladores.
 
@@ -91,6 +89,10 @@ export async function POST(req: Request) {
                 { status: 200 }
             );
         }
+
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
 
         const completion = await openai.chat.completions.create({
             model: 'gpt-4',
