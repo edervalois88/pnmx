@@ -72,8 +72,8 @@ export default function Hero() {
                     {/* Background Image Container */}
                     <div className={styles.imageContainer}>
                         <Image
-                            src="/hero-image.png"
-                            alt="Evento en vivo"
+                            src="/hero-payment-card.png"
+                            alt="Pago cashless con tarjeta PouchNATION en playa"
                             fill
                             className={styles.heroBackgroundImage}
                             priority
