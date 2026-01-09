@@ -1,27 +1,46 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronDown, Moon, Sun } from 'lucide-react';
+import { ChevronDown, Moon, Sun, Globe } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
+import { useState } from 'react';
 import styles from './Header.module.css';
 
 export default function Header() {
     const t = useTranslations('Navigation');
     const { theme, toggleTheme } = useTheme();
+    const locale = useLocale();
+    const router = useRouter();
+    const pathname = usePathname();
+    const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+
+    const switchLocale = (newLocale: string) => {
+        // Remove current locale from pathname and add new one
+        const segments = pathname.split('/').filter(Boolean);
+        if (segments[0] === 'es' || segments[0] === 'en') {
+            segments.shift();
+        }
+        const newPath = `/${newLocale}${segments.length > 0 ? '/' + segments.join('/') : ''}`;
+        router.push(newPath);
+        setLangDropdownOpen(false);
+    };
 
     return (
         <header className={styles.header}>
             <div className={styles.logoContainer}>
-                <Image
-                    src="/logo-wide.png"
-                    alt="PouchNation LatAm"
-                    width={180}
-                    height={40}
-                    className={styles.logoImage}
-                    priority
-                />
+                <Link href="/">
+                    <Image
+                        src="/logo-wide.png"
+                        alt="PouchNation LatAm"
+                        width={180}
+                        height={40}
+                        className={styles.logoImage}
+                        priority
+                    />
+                </Link>
             </div>
 
             <nav className={styles.nav}>
@@ -55,7 +74,36 @@ export default function Header() {
                         <Moon size={20} color="#000" />
                     )}
                 </button>
-                <button className={`${styles.button} ${styles.langSwitch}`}>ES / EN</button>
+
+                {/* Language Selector Dropdown */}
+                <div className={styles.dropdown}>
+                    <button
+                        className={`${styles.button} ${styles.langSwitch}`}
+                        onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                    >
+                        <Globe size={16} style={{ marginRight: '0.5rem' }} />
+                        {locale.toUpperCase()}
+                    </button>
+                    {langDropdownOpen && (
+                        <div className={styles.dropdownContent} style={{ minWidth: '120px' }}>
+                            <button
+                                onClick={() => switchLocale('es')}
+                                className={styles.dropdownItem}
+                                style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer' }}
+                            >
+                                🇲🇽 Español
+                            </button>
+                            <button
+                                onClick={() => switchLocale('en')}
+                                className={styles.dropdownItem}
+                                style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer' }}
+                            >
+                                🇺🇸 English
+                            </button>
+                        </div>
+                    )}
+                </div>
+
                 <Link href="#contact" className={`${styles.button} ${styles.primaryButton}`}>
                     {t('bookDemo')}
                 </Link>
