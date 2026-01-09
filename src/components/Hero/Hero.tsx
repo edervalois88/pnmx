@@ -43,7 +43,7 @@ export default function Hero() {
 
                 <div className={styles.imageWrapper}>
                     <Image
-                        src="/hero-image.png"
+                        src="/hero-payment-action.png"
                         alt="PouchNation Experience"
                         fill
                         className={styles.heroImage}
@@ -51,6 +51,10 @@ export default function Hero() {
                     />
                 </div>
             </div>
+
+            {/* Decorative background elements */}
+            <div className={`${styles.floatingShape} ${styles.shape1}`} />
+            <div className={`${styles.floatingShape} ${styles.shape2}`} />
         </section>
     );
 }
