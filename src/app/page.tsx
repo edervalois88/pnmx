@@ -7,6 +7,7 @@ import Solutions from '../components/Solutions/Solutions';
 import FeatureGrid from '../components/FeatureGrid/FeatureGrid';
 import Footer from '../components/Footer/Footer';
 import TrustBar from '../components/TrustBar/TrustBar';
+import FeaturesShowcase from '../components/FeaturesShowcase/FeaturesShowcase';
 import UserJourney from '../components/UserJourney/UserJourney';
 import ROICalculator from '../components/ROICalculator/ROICalculator';
 import AISuite from '../components/AISuite/AISuite';
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
 
         <TrustBar />
+        <FeaturesShowcase />
         <AISuite />
         <Solutions />
         <ROICalculator />
