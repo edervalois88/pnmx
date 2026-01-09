@@ -36,32 +36,22 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className={styles.imageWrapper}>
-                    <Image
-                        src="/hero-image.png"
-                        alt="PouchNation Experience"
-                        fill
-                        className={styles.heroImage}
-                        priority
-                    />
-
-                    {/* Mockup Overlay Card */}
-                    <div className={styles.floatingCard}>
-                        <div className={styles.cardHeader}>
-                            <div>
-                                <div className={styles.cardLabel}>Ventas Tiempo Real</div>
-                                <div className={styles.cardValue}>$1,245,890 <span className={styles.cardCurrency}>MXN</span></div>
-                            </div>
-                            <div className={styles.cardBadge}>+32% vs Efectivo</div>
+                {/* Mockup Overlay Card - Now standalone */}
+                <div className={styles.floatingCard}>
+                    <div className={styles.cardHeader}>
+                        <div>
+                            <div className={styles.cardLabel}>Ventas Tiempo Real</div>
+                            <div className={styles.cardValue}>$1,245,890 <span className={styles.cardCurrency}>MXN</span></div>
                         </div>
-                        {/* Simple Bar Chart Visualization */}
-                        <div className={styles.chart}>
-                            <div className={styles.bar} style={{ height: '40%' }}></div>
-                            <div className={styles.bar} style={{ height: '60%' }}></div>
-                            <div className={`${styles.bar} ${styles.activeBar}`} style={{ height: '85%' }}></div>
-                            <div className={styles.bar} style={{ height: '70%' }}></div>
-                            <div className={styles.bar} style={{ height: '65%' }}></div>
-                        </div>
+                        <div className={styles.cardBadge}>+32% vs Efectivo</div>
+                    </div>
+                    {/* Simple Bar Chart Visualization */}
+                    <div className={styles.chart}>
+                        <div className={styles.bar} style={{ height: '40%' }}></div>
+                        <div className={styles.bar} style={{ height: '60%' }}></div>
+                        <div className={`${styles.bar} ${styles.activeBar}`} style={{ height: '85%' }}></div>
+                        <div className={styles.bar} style={{ height: '70%' }}></div>
+                        <div className={styles.bar} style={{ height: '65%' }}></div>
                     </div>
                 </div>
             </div>

@@ -49,6 +49,11 @@
     position: relative;
 }
 
+/* Light mode - make pattern much more subtle */
+:global(html[data-theme='light']) .heroSection {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
 .container {
     max-width: 1200px;
     width: 100%;
@@ -89,6 +94,7 @@
     background-color: var(--primary);
     border-radius: 50%;
     margin-right: 0.5rem;
+    animation: pulse 2s infinite;
 }
 
 .title {
@@ -115,7 +121,7 @@
 }
 
 .boldWhite {
-    color: #fff;
+    color: var(--foreground);
     font-weight: 600;
 }
 
@@ -145,8 +151,8 @@
 
 .secondaryButton {
     background-color: transparent;
-    color: #fff;
-    border: 1px solid #4B5563;
+    color: var(--foreground);
+    border: 1px solid var(--border);
     padding: 1rem 2rem;
     border-radius: 9999px;
     font-weight: 700;
@@ -161,69 +167,55 @@
     color: var(--primary);
 }
 
-.imageWrapper {
-    position: relative;
-    border-radius: 24px;
-    aspect-ratio: 4/3;
-    perspective: 1000px;
-}
-
-.heroImage {
-    object-fit: cover;
-    border-radius: 24px;
-    opacity: 0.6;
-    /* Slight dim to make the overlay pop */
-}
-
-/* Floating Card Styles */
+/* Floating Card Styles - Now standalone and bigger */
 .floatingCard {
-    position: absolute;
-    bottom: -2rem;
-    left: -2rem;
-    background-color: #1F2937;
-    border: 1px solid #374151;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    width: 80%;
+    position: relative;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 500px;
     transform: rotate(-2deg);
-    transition: transform 0.3s;
+    transition: all 0.3s;
     z-index: 10;
 }
 
 .floatingCard:hover {
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(1.02);
 }
 
 .cardHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .cardLabel {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     text-transform: uppercase;
-    color: #9CA3AF;
+    color: var(--text-muted);
     font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .cardValue {
-    font-size: 1.875rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--foreground);
 }
 
 .cardCurrency {
-    font-size: 0.875rem;
-    color: #6B7280;
+    font-size: 1rem;
+    color: var(--text-muted);
 }
 
 .cardBadge {
     background-color: rgba(34, 197, 94, 0.2);
     color: #4ade80;
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 1rem;
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 700;
@@ -232,14 +224,15 @@
 .chart {
     display: flex;
     align-items: flex-end;
-    gap: 0.5rem;
-    height: 8rem;
+    gap: 0.75rem;
+    height: 10rem;
 }
 
 .bar {
     flex: 1;
-    background-color: #374151;
-    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: var(--border);
+    border-radius: 0.5rem 0.5rem 0 0;
+    transition: background-color 0.3s;
 }
 
 .activeBar {
@@ -250,13 +243,13 @@
 .activeBar::after {
     content: 'Peak!';
     position: absolute;
-    top: -1.5rem;
+    top: -2rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fff;
-    color: #000;
-    font-size: 0.7rem;
-    padding: 2px 4px;
-    border-radius: 4px;
+    background-color: var(--foreground);
+    color: var(--background);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
     font-weight: bold;
 }
