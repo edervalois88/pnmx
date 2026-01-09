@@ -44,22 +44,33 @@ export default function Header() {
             </div>
 
             <nav className={styles.nav}>
-                <Link href="/" className={styles.navLink}>Home</Link>
+                <Link href="/" className={`${styles.navLink} ${styles.active}`}>
+                    Inicio
+                </Link>
 
                 {/* Dropdown for Solutions */}
                 <div className={styles.dropdown}>
                     <span className={styles.navLink}>
-                        {t('solutions')} <ChevronDown size={14} className={styles.arrowDown} />
+                        Soluciones <ChevronDown size={14} className={styles.arrowDown} />
                     </span>
                     <div className={styles.dropdownContent}>
-                        <Link href="/pouchvenues" className={styles.dropdownItem}>{t('venues')}</Link>
-                        <Link href="/pouchevents" className={styles.dropdownItem}>{t('events')}</Link>
-                        <Link href="/pouchconnect" className={styles.dropdownItem}>Developers (API)</Link>
+                        <Link href="/pouchvenues" className={styles.dropdownItem}>PouchVenues</Link>
+                        <Link href="/pouchevents" className={styles.dropdownItem}>PouchEvents</Link>
+                        <Link href="/pouchconnect" className={styles.dropdownItem}>PouchConnect (API)</Link>
                     </div>
                 </div>
 
-                <Link href="#about" className={styles.navLink}>{t('about')}</Link>
-                <Link href="#contact" className={styles.navLink}>{t('contact')}</Link>
+                <Link href="#productos" className={styles.navLink}>
+                    Productos
+                </Link>
+
+                <Link href="#recursos" className={styles.navLink}>
+                    <span className={styles.iconText}>⚡</span> Recursos IA
+                </Link>
+
+                <Link href="#nosotros" className={styles.navLink}>
+                    Nosotros
+                </Link>
             </nav>
 
             <div className={styles.actions}>

@@ -41,15 +41,34 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.2s;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
   position: relative;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+  display: inline-block;
 }
 
 .navLink:hover {
   color: var(--primary);
+}
+
+/* Active state with cyan color and bottom border */
+.navLink.active {
+  color: var(--primary);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px 2px 0 0;
+}
+
+.iconText {
+  margin-right: 0.25rem;
 }
 
 /* Dropdown Styles */
