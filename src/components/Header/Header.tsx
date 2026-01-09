@@ -31,15 +31,19 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={styles.logoContainer}>
-                <Link href="/">
+                <Link href="/" className={styles.logoLink}>
                     <Image
-                        src="/logo-wide.png"
-                        alt="PouchNation LatAm"
-                        width={180}
+                        src="/logo-icon.png"
+                        alt="PouchNation"
+                        width={40}
                         height={40}
                         className={styles.logoImage}
                         priority
                     />
+                    <div className={styles.logoText}>
+                        <span className={styles.logoBrand}>Pouch<span className={styles.logoAccent}>NATION</span></span>
+                        <span className={styles.logoSubtext}>MÉXICO</span>
+                    </div>
                 </Link>
             </div>
 

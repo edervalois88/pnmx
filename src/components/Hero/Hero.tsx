@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCountUp } from '../../hooks/useCountUp';
 import styles from './Hero.module.css';
 
@@ -66,8 +67,20 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right Column - Visual Card */}
+                {/* Right Column - Visual Card with Background Image */}
                 <div className={styles.visualColumn}>
+                    {/* Background Image Container */}
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src="/hero-image.png"
+                            alt="Evento en vivo"
+                            fill
+                            className={styles.heroBackgroundImage}
+                            priority
+                        />
+                    </div>
+
+                    {/* Floating Card on top of image */}
                     <div className={styles.floatingCard} ref={revenue.ref}>
                         <div className={styles.cardHeader}>
                             <div>
