@@ -8,6 +8,8 @@ import FeatureGrid from '../components/FeatureGrid/FeatureGrid';
 import Footer from '../components/Footer/Footer';
 import TrustBar from '../components/TrustBar/TrustBar';
 import UserJourney from '../components/UserJourney/UserJourney';
+import ROICalculator from '../components/ROICalculator/ROICalculator';
+import AISuite from '../components/AISuite/AISuite';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -20,7 +22,9 @@ export default function Home() {
         <Hero />
 
         <TrustBar />
+        <AISuite />
         <Solutions />
+        <ROICalculator />
         <UserJourney />
         <FeatureGrid />
       </main>
