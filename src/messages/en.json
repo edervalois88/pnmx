@@ -12,6 +12,60 @@
         "about": "About Us",
         "contact": "Contact"
     },
+    "PouchVenues": {
+        "title": "Hotel & Venue Management",
+        "subtitle": "Transform your hotel or venue into a fully integrated cashless ecosystem.",
+        "features": {
+            "f1": {
+                "title": "PMS Integration",
+                "desc": "Connect with Oracle, Mews, Cloudbeds, and more."
+            },
+            "f2": {
+                "title": "Digital Key",
+                "desc": "Guests use their wristband for everything: room and payments."
+            },
+            "f3": {
+                "title": "Inventory",
+                "desc": "Total stock control in real-time."
+            }
+        }
+    },
+    "PouchEvents": {
+        "title": "Festivals & Mass Events",
+        "subtitle": "The #1 solution in LatAm for large-scale festivals.",
+        "features": {
+            "f1": {
+                "title": "Fast Access",
+                "desc": "Entry for thousands in minutes with RFID."
+            },
+            "f2": {
+                "title": "100% Offline",
+                "desc": "Keep selling even if the internet goes down."
+            },
+            "f3": {
+                "title": "Staff Cashless",
+                "desc": "Control sales at your bars and food trucks."
+            }
+        }
+    },
+    "PouchConnect": {
+        "title": "PouchConnect for Developers",
+        "subtitle": "Robust APIs to integrate PouchNation with your ecosystem.",
+        "features": {
+            "f1": {
+                "title": "Booking API",
+                "desc": "Synchronize guests and attendees automatically."
+            },
+            "f2": {
+                "title": "Accounting API",
+                "desc": "Push all transactions to your general ledger."
+            },
+            "f3": {
+                "title": "Webhooks",
+                "desc": "Receive real-time event notifications."
+            }
+        }
+    },
     "Solutions": {
         "title": "Comprehensive Solutions",
         "subtitle": "Adaptable technology for any type of experience.",

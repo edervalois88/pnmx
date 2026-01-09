@@ -1,0 +1,53 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    padding: 8rem 2rem;
+    text-align: center;
+    /* Orange/Red theme for Events */
+    background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero {
+        background: linear-gradient(135deg, #3e2723 0%, #000000 100%);
+    }
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FF5A5F;
+    /* Primary Red for Events */
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    color: #FF5A5F;
+    margin-bottom: 1rem;
+}

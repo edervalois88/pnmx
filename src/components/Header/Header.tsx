@@ -22,10 +22,10 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.logo}>PouchNation LatAm</div>
             <nav className={styles.nav}>
-                <Link href="#solutions" className={styles.navLink}>{t('solutions')}</Link>
-                <Link href="#events" className={styles.navLink}>{t('events')}</Link>
-                <Link href="#venues" className={styles.navLink}>{t('venues')}</Link>
-                <Link href="#about" className={styles.navLink}>{t('about')}</Link>
+                <Link href="/" className={styles.navLink}>Home</Link>
+                <Link href="/pouchevents" className={styles.navLink}>{t('events')}</Link>
+                <Link href="/pouchvenues" className={styles.navLink}>{t('venues')}</Link>
+                <Link href="/pouchconnect" className={styles.navLink}>PouchConnect</Link>
             </nav>
             <div className={styles.actions}>
                 <button className={`${styles.button} ${styles.langSwitch}`}>ES / EN</button>

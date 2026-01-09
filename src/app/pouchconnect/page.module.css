@@ -1,0 +1,55 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero {
+    padding: 8rem 2rem;
+    text-align: center;
+    /* Dark/Hacker theme for Connect */
+    background: linear-gradient(135deg, #f3e5f5 0%, #ffffff 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero {
+        background: linear-gradient(135deg, #4a148c 0%, #000000 100%);
+    }
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #8E24AA;
+    /* Purple for Connect/API */
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: monospace;
+    /* Developer vibe */
+}
+
+.card h3 {
+    color: #8E24AA;
+    margin-bottom: 1rem;
+}

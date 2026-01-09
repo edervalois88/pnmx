@@ -12,6 +12,60 @@
         "about": "Nosotros",
         "contact": "Contacto"
     },
+    "PouchVenues": {
+        "title": "Gestión Hotelera y de Recintos",
+        "subtitle": "Transforma tu hotel o recinto en un ecosistema cashless totalmente integrado.",
+        "features": {
+            "f1": {
+                "title": "Integración PMS",
+                "desc": "Conecta con Oracle, Mews, Cloudbeds y más."
+            },
+            "f2": {
+                "title": "Llave Digital",
+                "desc": "Tus huéspedes usan su pulsera para todo: habitación y pagos."
+            },
+            "f3": {
+                "title": "Inventario",
+                "desc": "Control total de stock en tiempo real."
+            }
+        }
+    },
+    "PouchEvents": {
+        "title": "Festivales y Eventos Masivos",
+        "subtitle": "La solución número #1 en LatAm para festivales de gran escala.",
+        "features": {
+            "f1": {
+                "title": "Acceso Rápido",
+                "desc": "Ingreso de miles de personas en minutos con RFID."
+            },
+            "f2": {
+                "title": "100% Offline",
+                "desc": "Sigue vendiendo aunque se caiga el internet."
+            },
+            "f3": {
+                "title": "Staff Cashless",
+                "desc": "Controla las ventas de tus barras y foodtrucks."
+            }
+        }
+    },
+    "PouchConnect": {
+        "title": "PouchConnect para Desarrolladores",
+        "subtitle": "APIs robustas para integrar PouchNation con tu ecosistema.",
+        "features": {
+            "f1": {
+                "title": "API de Reservas",
+                "desc": "Sincroniza huéspedes y asistentes automáticamente."
+            },
+            "f2": {
+                "title": "API Contable",
+                "desc": "Lleva todos los movimientos a tu libro mayor."
+            },
+            "f3": {
+                "title": "Webhooks",
+                "desc": "Recibe notificaciones de eventos en tiempo real."
+            }
+        }
+    },
     "Solutions": {
         "title": "Soluciones Integrales",
         "subtitle": "Tecnología adaptable para cualquier tipo de experiencia.",
