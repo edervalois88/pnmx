@@ -4,50 +4,564 @@
     flex-direction: column;
 }
 
+/* Hero Section - Same as Venues */
 .hero {
-    padding: 8rem 2rem;
+    padding: 8rem 2rem 4rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
     text-align: center;
-    /* Orange/Red theme for Events */
-    background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-    .hero {
-        background: linear-gradient(135deg, #3e2723 0%, #000000 100%);
+.heroContent {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    color: #8B5CF6;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    background-color: rgba(139, 92, 246, 0.1);
+    border-radius: 2rem;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--foreground);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.5rem;
     }
 }
 
-.title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #FF5A5F;
-    /* Primary Red for Events */
+.heroSubtitle {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin: 0;
+    max-width: 700px;
 }
 
-.subtitle {
-    font-size: 1.5rem;
-    color: #555;
+/* Carousel Section - Same expandable effect */
+.carouselSection {
+    padding: 3rem 2rem;
+    background-color: var(--background);
+}
+
+.carouselHeader {
+    text-align: center;
     margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.carouselHeader.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--foreground);
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .sectionTitle {
+        font-size: 2rem;
+    }
+}
+
+.sectionDescription {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Expandable Carousel */
+.carouselContainer {
+    display: flex;
+    gap: 1.5rem;
+    height: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+}
+
+.carouselContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+    .carouselContainer {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+}
+
+.expandableCard {
+    position: relative;
+    flex: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expandableCard.active {
+    flex: 2.5;
+}
+
+.expandableCard.collapsed {
+    flex: 0.5;
+}
+
+@media (max-width: 968px) {
+    .expandableCard {
+        min-height: 300px;
+        flex: none !important;
+    }
+
+    .expandableCard.active {
+        min-height: 400px;
+    }
+
+    .expandableCard.collapsed {
+        min-height: 100px;
+    }
+}
+
+.cardBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.backgroundImage {
+    object-fit: cover;
+    transition: transform 0.6s ease-out;
+}
+
+.expandableCard:hover .backgroundImage {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    transition: opacity 0.6s;
+}
+
+.expandableCard.collapsed .overlay {
+    opacity: 0.9;
+}
+
+.cardContent {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    color: white;
+}
+
+.eventName {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: font-size 0.6s, font-weight 0.6s, opacity 0.3s;
+    opacity: 1;
+}
+
+.expandableCard.active .eventName {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.expandableCard.collapsed .eventName {
+    font-size: 1rem;
+    font-weight: 300;
+    opacity: 0;
+}
+
+@media (max-width: 968px) {
+    .eventName {
+        font-size: 1.125rem;
+    }
+
+    .expandableCard.active .eventName {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .expandableCard.collapsed .eventName {
+        font-size: 0.875rem;
+        font-weight: 300;
+        opacity: 0;
+    }
+}
+
+/* Benefits Section - GRID LAYOUT (Different from Venues) */
+.benefitsSection {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+}
+
+.benefitsHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.benefitsHeader.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefitsGrid {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
 }
 
-.card {
-    padding: 2rem;
-    border-radius: 12px;
-    background: var(--background);
+.benefitsGrid.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.benefitCard {
+    background-color: var(--card-bg);
     border: 1px solid var(--border);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.card h3 {
-    color: #FF5A5F;
-    margin-bottom: 1rem;
+.benefitsGrid.visible .benefitCard {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.benefitCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.benefitIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefitTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.benefitDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Sticky Scroll Section - Same as Venues */
+.stickySection {
+    padding: 3rem 0;
+    background-color: var(--background);
+}
+
+.stickyContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    min-height: 80vh;
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .stickyContainer {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        min-height: auto;
+    }
+}
+
+.stickyTitle {
+    position: sticky;
+    top: 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (max-width: 968px) {
+    .stickyTitle {
+        position: relative;
+        top: 0;
+    }
+}
+
+.stickyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.stickyContent.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.operationCard {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stickyContent.visible .operationCard {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.operationCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.operationIcon {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.operationTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.operationDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Features Grid - 2 columns (Different from Venues 3 columns) */
+.featuresSection {
+    padding: 3rem 2rem;
+    background-color: var(--background);
+}
+
+.featuresHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.featuresHeader.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.featuresGrid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
+}
+
+.featuresGrid.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .featuresGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.featureCard {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s, transform 0.5s;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.featuresGrid.visible .featureCard {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.featureCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.featureIconWrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.featureTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0 0 0.5rem 0;
+}
+
+.featureDescription {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* CTA Section - Purple gradient (Different from Venues cyan) */
+.ctaSection {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+}
+
+.ctaContent {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.ctaTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .ctaTitle {
+        font-size: 2rem;
+    }
+}
+
+.ctaDescription {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #8B5CF6;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }

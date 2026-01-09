@@ -25,8 +25,22 @@
   cursor: pointer;
 }
 
+.logoWrapper {
+  position: relative;
+  width: 160px;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .logoWrapper {
+    width: 140px;
+    height: 28px;
+  }
+}
+
 .logoImage {
-  /* No inversion needed for icon logo */
+  object-fit: contain;
+  object-position: left center;
   filter: none !important;
 }
 

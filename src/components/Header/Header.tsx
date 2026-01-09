@@ -32,14 +32,15 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.logoContainer}>
                 <Link href="/" className={styles.logoLink}>
-                    <Image
-                        src="/logo-full.png"
-                        alt="PouchNation"
-                        width={180}
-                        height={36}
-                        className={styles.logoImage}
-                        priority
-                    />
+                    <div className={styles.logoWrapper}>
+                        <Image
+                            src="/logo-full.png"
+                            alt="PouchNation"
+                            fill
+                            className={styles.logoImage}
+                            priority
+                        />
+                    </div>
                 </Link>
             </div>
 
