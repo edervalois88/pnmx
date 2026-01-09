@@ -1,45 +1,118 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import { DollarSign, Package, CheckCircle, Smartphone, Wifi, FileText, Ticket, UserCheck, Tag, UserCircle, CreditCard, Code } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import styles from './Solutions.module.css';
+import Image from 'next/image';
+
+const venuesFeatures = [
+    { icon: DollarSign, title: 'Pagos Sin Efectivo', color: '#04AEF0' },
+    { icon: Package, title: 'Gestión de Inventario', color: '#04AEF0' },
+    { icon: CheckCircle, title: 'Check-In & Check-Out', color: '#04AEF0' },
+    { icon: Smartphone, title: 'Pedidos Móviles', color: '#04AEF0' },
+    { icon: Wifi, title: 'Funcionalidad Offline', color: '#04AEF0' },
+    { icon: FileText, title: 'Reportes en Tiempo Real', color: '#04AEF0' },
+    { icon: Ticket, title: 'Sistema de Vouchers', color: '#04AEF0' },
+    { icon: UserCheck, title: 'Control de Acceso', color: '#04AEF0' },
+];
+
+const eventsFeatures = [
+    { icon: Ticket, title: 'Ticketing Online', color: '#04AEF0' },
+    { icon: DollarSign, title: 'Pagos Sin Efectivo', color: '#04AEF0' },
+    { icon: UserCheck, title: 'Control de Acceso', color: '#04AEF0' },
+    { icon: Smartphone, title: 'Pedidos Móviles', color: '#04AEF0' },
+    { icon: Tag, title: 'Tags NFC Personalizados', color: '#04AEF0' },
+    { icon: UserCircle, title: 'Escaneo & Registro', color: '#04AEF0' },
+    { icon: FileText, title: 'Reportes & Analytics', color: '#04AEF0' },
+    { icon: CreditCard, title: 'Sistema de Vouchers', color: '#04AEF0' },
+];
 
 export default function Solutions() {
-    const t = useTranslations('Solutions');
-
-    const categories = ['events', 'venues'] as const;
+    const venuesReveal = useScrollReveal({ threshold: 0.1 });
+    const eventsReveal = useScrollReveal({ threshold: 0.1 });
+    const developersReveal = useScrollReveal({ threshold: 0.1 });
 
     return (
         <section id="solutions" className={styles.section}>
-            <h2 className={styles.title}>{t('title')}</h2>
-            <p className={styles.subtitle}>{t('subtitle')}</p>
+            {/* Venues Section */}
+            <div className={styles.solutionBlock} ref={venuesReveal.ref}>
+                <div className={styles.stickyTitle}>
+                    <div className={styles.badge}>Soluciones</div>
+                    <h2 className={styles.title}>Para Venues</h2>
+                    <p className={styles.description}>
+                        Optimiza entrada y pagos con nuestro sistema todo-en-uno—rápido,
+                        sin efectivo y sin complicaciones.
+                    </p>
+                    <Link href="/pouchvenues" className={styles.learnMore}>
+                        Conoce más →
+                    </Link>
+                </div>
+                <div className={`${styles.featuresGrid} ${venuesReveal.isVisible ? styles.visible : ''}`}>
+                    {venuesFeatures.map((feature, idx) => {
+                        const Icon = feature.icon;
+                        return (
+                            <div key={idx} className={styles.featureCard} style={{ transitionDelay: `${idx * 0.1}s` }}>
+                                <div className={styles.iconWrapper} style={{ backgroundColor: `${feature.color}15` }}>
+                                    <Icon size={32} color={feature.color} />
+                                </div>
+                                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
 
-            <div className={styles.grid}>
-                {categories.map((cat) => (
-                    <div key={cat} className={styles.card}>
-                        <h3 className={styles.cardTitle}>{t(`${cat}.title`)}</h3>
-                        <p className={styles.cardDesc}>{t(`${cat}.desc`)}</p>
-                        <ul className={styles.featureList}>
-                            {/* We'll assume fixed 4 features for now as defined in JSON */}
-                            {[0, 1, 2, 3].map((idx) => {
-                                // Accessing array in json via next-intl can be tricky if not explicit
-                                // A common pattern is t.raw or structured access, but let's try direct key if possible 
-                                // or just iterate known keys if the structure allows.
-                                // For safety with type checking in next-intl, we often use specific keys.
-                                // Let's assume the JSON is an array or object we can map. 
-                                // Actually next-intl returns strings usually.
-                                // Let's rely on `t.rich` or similar if we want markup, but here we just need text.
-                                // "features" is an array in JSON.
-                                return (
-                                    <li key={idx} className={styles.featureItem}>
-                                        <CheckCircle2 className={styles.checkIcon} size={20} />
-                                        {t(`${cat}.features.${idx}`)}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                ))}
+            {/* Events Section */}
+            <div className={styles.solutionBlock} ref={eventsReveal.ref}>
+                <div className={styles.stickyTitle}>
+                    <div className={styles.badge}>Soluciones</div>
+                    <h2 className={styles.title}>Para Eventos</h2>
+                    <p className={styles.description}>
+                        Check-ins sin esfuerzo y pagos sin efectivo—configuración fácil,
+                        eventos más fluidos, mayores ganancias.
+                    </p>
+                    <Link href="/pouchevents" className={styles.learnMore}>
+                        Conoce más →
+                    </Link>
+                </div>
+                <div className={`${styles.featuresGrid} ${eventsReveal.isVisible ? styles.visible : ''}`}>
+                    {eventsFeatures.map((feature, idx) => {
+                        const Icon = feature.icon;
+                        return (
+                            <div key={idx} className={styles.featureCard} style={{ transitionDelay: `${idx * 0.1}s` }}>
+                                <div className={styles.iconWrapper} style={{ backgroundColor: `${feature.color}15` }}>
+                                    <Icon size={32} color={feature.color} />
+                                </div>
+                                <h3 className={styles.featureTitle}>{feature.title}</h3>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+
+            {/* Developers Section */}
+            <div className={styles.solutionBlock} ref={developersReveal.ref}>
+                <div className={styles.stickyTitle}>
+                    <div className={styles.badge}>Soluciones</div>
+                    <h2 className={styles.title}>Para Desarrolladores</h2>
+                    <p className={styles.description}>
+                        Con nuestra amplia gama de API's abiertas, puedes vincular aplicaciones
+                        de terceros a nuestro sistema proporcionando operaciones más fluidas y
+                        mejores experiencias para los invitados. ¡Configura, prueba y activa en solo unos pasos!
+                    </p>
+                    <Link href="/pouchconnect" className={styles.learnMore}>
+                        Conoce más →
+                    </Link>
+                </div>
+                <div className={`${styles.developerImage} ${developersReveal.isVisible ? styles.visible : ''}`}>
+                    <Image
+                        src="/event-concert.png"
+                        alt="Desarrolladores API"
+                        fill
+                        className={styles.image}
+                    />
+                </div>
             </div>
         </section>
     );
