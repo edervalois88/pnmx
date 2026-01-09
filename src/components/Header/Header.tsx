@@ -35,8 +35,8 @@ export default function Header() {
                     <Image
                         src="/logo-full.png"
                         alt="PouchNation"
-                        width={200}
-                        height={50}
+                        width={180}
+                        height={36}
                         className={styles.logoImage}
                         priority
                     />

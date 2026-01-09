@@ -8,11 +8,11 @@ export default function TrustBar() {
     const t = useTranslations('TrustBar');
 
     const partners = [
-        { name: 'AMPROFEC', logo: '/partners/amprofec.png', width: 160, height: 70 },
-        { name: 'MPI México', logo: '/partners/mpi-mexico.png', width: 180, height: 70 },
-        { name: 'OXXO Pay', logo: '/partners/oxxo-pay.png', width: 200, height: 60 },
-        { name: 'Visa', logo: '/partners/visa.png', width: 140, height: 60 },
-        { name: 'Mastercard', logo: '/partners/mastercard.png', width: 140, height: 90 }
+        { name: 'AMPROFEC', logo: '/partners/amprofec.png', width: 120, height: 60 },
+        { name: 'MPI México', logo: '/partners/mpi-mexico.png', width: 140, height: 60 },
+        { name: 'OXXO Pay', logo: '/partners/oxxo-pay.png', width: 160, height: 50 },
+        { name: 'Visa', logo: '/partners/visa.png', width: 120, height: 50 },
+        { name: 'Mastercard', logo: '/partners/mastercard.png', width: 100, height: 65 }
     ];
 
     return (
