@@ -9,11 +9,25 @@
   top: 0;
   z-index: 100;
   backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
+}
+
+.logoImage {
+  /* In light mode, you might need to invert the logo if it's white text.
+     Assuming logo-wide.png is white text for dark mode. */
+  filter: var(--logo-filter, none);
+}
+
+/* Add this var to light theme in globals if needed, 
+   or just handle logic here if we had css vars for logo inversion */
+[data-theme='light'] .logoImage {
+  filter: invert(1);
+  /* Hacky but works for white logos to black */
 }
 
 .nav {
@@ -30,6 +44,8 @@
   transition: color 0.2s;
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .navLink:hover {
@@ -89,16 +105,32 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggle {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  padding: 0.6rem;
+}
+
+.themeToggle:hover {
+  background-color: var(--card-bg);
+  color: var(--primary);
 }
 
 .primaryButton {
-  background-color: #00A699;
+  background-color: var(--primary);
   color: white;
+  /* Always white text on primary button */
   text-decoration: none;
 }
 
 .primaryButton:hover {
-  background-color: #008f84;
+  background-color: var(--primary-dark);
 }
 
 .langSwitch {
@@ -107,8 +139,11 @@
   color: var(--foreground);
 }
 
+.langSwitch:hover {
+  border-color: var(--primary);
+}
+
 /* Utilities for icons arrows */
 .arrowDown {
   margin-left: 4px;
-  font-size: 0.8em;
 }

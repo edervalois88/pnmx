@@ -1,7 +1,7 @@
 .section {
     padding: 6rem 2rem;
-    background-color: #111827;
-    /* Darker bg */
+    background-color: var(--background);
+    /* Darker bg handled by variable now, maybe define a --background-alt */
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -23,14 +23,14 @@
 
 .title {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--foreground);
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
 .subtitle {
     font-size: 1.125rem;
-    color: #9CA3AF;
+    color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: #D1D5DB;
+    color: var(--foreground);
 }
 
 .benefitIcon {
@@ -52,8 +52,8 @@
 }
 
 .calculatorCard {
-    background-color: #0B1120;
-    border: 1px solid var(--border);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 1.5rem;
     padding: 2rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -70,19 +70,19 @@
 }
 
 .label {
-    color: #9CA3AF;
+    color: var(--text-muted);
     font-size: 0.875rem;
 }
 
 .value {
-    color: #fff;
+    color: var(--foreground);
     font-weight: 700;
 }
 
 .slider {
     width: 100%;
     height: 6px;
-    background: #374151;
+    background: var(--border);
     border-radius: 4px;
     outline: none;
     -webkit-appearance: none;
@@ -99,9 +99,10 @@
 }
 
 .resultBox {
-    background-color: #1F2937;
+    background-color: var(--background);
     border-radius: 1rem;
     padding: 1.5rem;
+    border: 1px solid var(--border);
 }
 
 .resultRow {
@@ -112,12 +113,12 @@
 }
 
 .resultLabel {
-    color: #9CA3AF;
+    color: var(--text-muted);
     font-size: 0.875rem;
 }
 
 .resultVal {
-    color: #D1D5DB;
+    color: var(--foreground);
     font-weight: 500;
 }
 
@@ -142,12 +143,12 @@
 }
 
 .totalLabel {
-    color: #fff;
+    color: var(--foreground);
     font-weight: 700;
 }
 
 .totalAmount {
-    color: #fff;
+    color: var(--foreground);
     font-size: 1.5rem;
     font-weight: 700;
 }
