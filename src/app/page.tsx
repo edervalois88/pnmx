@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Hero from '../components/Hero/Hero';
 import Header from '../components/Header/Header';
 import Solutions from '../components/Solutions/Solutions';
 import FeatureGrid from '../components/FeatureGrid/FeatureGrid';
@@ -16,14 +17,7 @@ export default function Home() {
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
-        <section className={styles.hero}>
-          <h1 className={styles.title}>{t('title')}</h1>
-          <p className={styles.subtitle}>{t('subtitle')}</p>
-          <div className={styles.ctaGroup}>
-            <button className={styles.primaryButton}>{t('getStarted')}</button>
-            <button className={styles.secondaryButton}>{t('learnMore')}</button>
-          </div>
-        </section>
+        <Hero />
 
         <TrustBar />
         <Solutions />

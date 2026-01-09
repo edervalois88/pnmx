@@ -1,16 +1,23 @@
 {
     "HomePage": {
-        "title": "Guest Management & Cashless Payments",
-        "subtitle": "The leading platform for events and venues in Latin America.",
-        "getStarted": "Get Started",
-        "learnMore": "Learn More"
+        "title": "The Most Robust and Reliable Cashless Platform in Mexico",
+        "heroTitle": "The Future of <highlight>360° Guest Management</highlight>",
+        "subtitle": "Streamline operations and elevate guest experiences with PouchNATION's all-in-one guest management solution—cashless payments, smart access, and real-time data.",
+        "getStarted": "Get a Quote",
+        "learnMore": "Watch Video: OXXO Pay",
+        "stats": {
+            "customers": "Satisfied Customers",
+            "datapoints": "Data Points Collected",
+            "transactions": "Transactions Processed"
+        }
     },
     "Navigation": {
         "solutions": "Solutions",
-        "events": "Events",
-        "venues": "Venues",
+        "events": "For Events",
+        "venues": "For Venues",
         "about": "About Us",
-        "contact": "Contact"
+        "contact": "Contact Us",
+        "bookDemo": "Book a Demo"
     },
     "PouchVenues": {
         "title": "Hotel & Venue Management",

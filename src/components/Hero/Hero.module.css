@@ -1,0 +1,107 @@
+.heroSection {
+    padding: 4rem 2rem 6rem;
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 968px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.content {
+    text-align: left;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+}
+
+.highlight {
+    color: #00A699;
+    /* PouchNation Teal */
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.statsRow {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00A699;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+.imageWrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* Aspect ratio for the image */
+    aspect-ratio: 4/3;
+}
+
+.heroImage {
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.heroImage:hover {
+    transform: scale(1.05);
+}
+
+.ctaButton {
+    background-color: #00A699;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.ctaButton:hover {
+    background-color: #008f84;
+}

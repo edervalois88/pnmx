@@ -1,16 +1,23 @@
 {
     "HomePage": {
         "title": "La Plataforma Cashless Más Robusta y Confiable de México",
-        "subtitle": "Elimina el efectivo, controla tus mermas y cumple con el SAT. Tecnología 100% Offline para eventos que no pueden detenerse.",
+        "heroTitle": "El Futuro de la <highlight>Gestión 360°</highlight> de Invitados",
+        "subtitle": "Optimiza operaciones y eleva la experiencia de tus asistentes con la solución All-in-One de PouchNATION: Pagos cashless, accesos inteligentes y datos en tiempo real.",
         "getStarted": "Cotizar mi Evento",
-        "learnMore": "Ver Video: OXXO Pay"
+        "learnMore": "Ver Video: OXXO Pay",
+        "stats": {
+            "customers": "Clientes Satisfechos",
+            "datapoints": "Datos Recolectados",
+            "transactions": "Transacciones Procesadas"
+        }
     },
     "Navigation": {
         "solutions": "Soluciones",
-        "events": "Eventos",
-        "venues": "Recintos",
+        "events": "Para Eventos",
+        "venues": "Para Recintos",
         "about": "Nosotros",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "bookDemo": "Agendar Demo"
     },
     "PouchVenues": {
         "title": "Gestión Hotelera y de Recintos",
