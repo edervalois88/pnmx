@@ -1,9 +1,9 @@
 {
     "HomePage": {
-        "title": "Gestión de Invitados y Pagos Cashless",
-        "subtitle": "La plataforma líder para eventos y recintos en Latinoamérica.",
-        "getStarted": "Solicitar Demo",
-        "learnMore": "Saber Más"
+        "title": "La Plataforma Cashless Más Robusta y Confiable de México",
+        "subtitle": "Elimina el efectivo, controla tus mermas y cumple con el SAT. Tecnología 100% Offline para eventos que no pueden detenerse.",
+        "getStarted": "Cotizar mi Evento",
+        "learnMore": "Ver Video: OXXO Pay"
     },
     "Navigation": {
         "solutions": "Soluciones",
@@ -67,46 +67,56 @@
         }
     },
     "Solutions": {
-        "title": "Soluciones Integrales",
-        "subtitle": "Tecnología adaptable para cualquier tipo de experiencia.",
+        "title": "Los 3 Pilares de un Evento Blindado",
+        "subtitle": "Tecnología diseñada para la realidad operativa de México.",
         "events": {
-            "title": "Para Eventos y Festivales",
-            "desc": "Control total desde el primer boleto hasta la última bebida.",
+            "title": "Control Operativo y Antirrobo",
+            "desc": "Dile adiós al robo hormiga. Monitorea inventarios en tiempo real y detecta anomalías al instante sin depender de cortes de caja manuales.",
             "features": [
-                "Venta de Boletos",
-                "Control de Acceso (RFID)",
-                "Pagos Cashless",
-                "Reportes en Tiempo Real"
+                "Cero Robo Hormiga",
+                "Auditoría Forense en Vivo",
+                "Control de Mermas",
+                "Staff Cashless"
             ]
         },
         "venues": {
-            "title": "Para Recintos y Hoteles",
-            "desc": "Optimiza la operación y aumenta el consumo de tus huéspedes.",
+            "title": "Experiencia y Multicaja (OXXO)",
+            "desc": "Facilidades reales para el público mexicano. Recargas vía tarjeta, efectivo y OXXO Pay. Reduce filas con transacciones NFC de 0.5s.",
             "features": [
-                "Check-in Rápido",
-                "Llave Digital",
-                "Puntos de Venta (POS)",
-                "Gestión de Inventario"
+                "Recargas OXXO Pay",
+                "Pagos con Tarjeta/Efectivo",
+                "Reducción de Filas",
+                "Cobro Híbrido"
             ]
         }
     },
     "Features": {
-        "title": "Por qué elegir PouchNation",
+        "title": "Por qué PouchNATION es el Estándar en México",
         "f1": {
-            "title": "Más Ingresos",
-            "desc": "Aumenta el gasto promedio de los asistentes hasta un 30%."
+            "title": "Cumplimiento Fiscal (SAT)",
+            "desc": "Módulo de Autofacturación CFDI 4.0 integrado. Tus asistentes facturan sus consumos en segundos."
         },
         "f2": {
-            "title": "Datos Reales",
-            "desc": "Conoce quién consume qué y cuándo. Toma decisiones informadas."
+            "title": "Transparencia Radical",
+            "desc": "Reembolsos automáticos y sin letras chiquitas. Cumple con los nuevos lineamientos de la Profeco."
         },
         "f3": {
-            "title": "Cero Fraudes",
-            "desc": "Elimina el efectivo y reduce el riesgo de robo o pérdidas."
+            "title": "Seguridad 100% Offline",
+            "desc": "Nuestra red local no se cae. Sigue vendiendo en Tulum o el desierto aunque falle el 4G."
         },
         "f4": {
-            "title": "Offline First",
-            "desc": "Nuestra tecnología funciona 100% sin internet. La fiesta no para."
+            "title": "Blindaje Financiero",
+            "desc": "El staff nunca toca el dinero. Elimina el riesgo de efectivo circulante y descuadres en barras."
         }
+    },
+    "TrustBar": {
+        "title": "Tecnología utilizada en eventos de clase mundial y adaptada a la normativa mexicana"
+    },
+    "UserJourney": {
+        "title": "El Viaje del Usuario Mexicano",
+        "step1": "Recarga Online o OXXO Pay",
+        "step2": "Acceso Rápido NFC (Offline)",
+        "step3": "Consumo Tap & Go",
+        "step4": "Facturación y Reembolso Automático"
     }
 }

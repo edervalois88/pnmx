@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import styles from './Header.module.css';
 
@@ -20,7 +21,16 @@ export default function Header() {
 
     return (
         <header className={styles.header}>
-            <div className={styles.logo}>PouchNation LatAm</div>
+            <div className={styles.logoContainer}>
+                <Image
+                    src="/logo-wide.png"
+                    alt="PouchNation LatAm"
+                    width={180}
+                    height={40}
+                    className={styles.logoImage}
+                    priority
+                />
+            </div>
             <nav className={styles.nav}>
                 <Link href="/" className={styles.navLink}>Home</Link>
                 <Link href="/pouchevents" className={styles.navLink}>{t('events')}</Link>

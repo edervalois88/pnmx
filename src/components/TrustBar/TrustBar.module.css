@@ -1,0 +1,29 @@
+.bar {
+    background-color: var(--background);
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.title {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logoGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    opacity: 0.6;
+}
+
+.logoPlaceholder {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #888;
+}
