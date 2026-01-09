@@ -12,6 +12,18 @@
   transition: background-color 0.3s ease;
 }
 
+@media (max-width: 640px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+}
+
 .logoContainer {
   display: flex;
   align-items: center;

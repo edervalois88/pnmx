@@ -42,10 +42,12 @@
 
 @media (max-width: 640px) {
     .chatWindow {
-        width: calc(100vw - 2rem);
-        height: calc(100vh - 2rem);
-        bottom: 1rem;
-        right: 1rem;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        border: none;
     }
 }
 
