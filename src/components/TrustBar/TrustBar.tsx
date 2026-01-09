@@ -1,20 +1,34 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import styles from './TrustBar.module.css';
 
 export default function TrustBar() {
     const t = useTranslations('TrustBar');
 
-    // Placeholder text for logos if we don't have SVGs yet
-    const partners = ['AMPROFEC', 'MPI México', 'OXXO Pay', 'Visa', 'Mastercard'];
+    const partners = [
+        { name: 'AMPROFEC', logo: '/partners/amprofec.png', width: 140, height: 60 },
+        { name: 'MPI México', logo: '/partners/mpi-mexico.png', width: 160, height: 60 },
+        { name: 'OXXO Pay', logo: '/partners/oxxo-pay.png', width: 180, height: 50 },
+        { name: 'Visa', logo: '/partners/visa.png', width: 100, height: 40 },
+        { name: 'Mastercard', logo: '/partners/mastercard.png', width: 120, height: 80 }
+    ];
 
     return (
         <section className={styles.bar}>
             <p className={styles.title}>{t('title')}</p>
             <div className={styles.logoGrid}>
                 {partners.map((partner) => (
-                    <span key={partner} className={styles.logoPlaceholder}>{partner}</span>
+                    <div key={partner.name} className={styles.logoContainer}>
+                        <Image
+                            src={partner.logo}
+                            alt={partner.name}
+                            width={partner.width}
+                            height={partner.height}
+                            className={styles.logo}
+                        />
+                    </div>
                 ))}
             </div>
         </section>
