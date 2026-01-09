@@ -92,12 +92,18 @@ export default function AIChat() {
             {isOpen && (
                 <div className={styles.chatWindow}>
                     {/* Header */}
+                    {/* Header */}
                     <div className={styles.chatHeader}>
                         <div className={styles.headerContent}>
-                            <Bot size={24} />
-                            <div>
-                                <h3 className={styles.headerTitle}>Asistente PouchNATION</h3>
-                                <p className={styles.headerStatus}>En línea</p>
+                            <div className={styles.botAvatar}>
+                                <Bot size={20} />
+                            </div>
+                            <div className={styles.headerInfo}>
+                                <h3>Asistente PouchNATION</h3>
+                                <p className={styles.headerStatus}>
+                                    <span className={styles.statusDot}></span>
+                                    En línea
+                                </p>
                             </div>
                         </div>
                         <button
