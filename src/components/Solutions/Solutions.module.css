@@ -111,8 +111,8 @@
 }
 
 .featureCard {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border);
+    background-color: transparent;
+    border: none;
     border-radius: 1rem;
     padding: 2rem;
     display: flex;
@@ -120,7 +120,7 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s, transform 0.6s;
+    transition: transform 0.3s, opacity 0.6s, transform 0.6s;
     opacity: 0;
     transform: translateY(20px);
 }
@@ -131,17 +131,21 @@
 }
 
 .featureCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
 }
 
 .iconWrapper {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s;
+}
+
+.featureCard:hover .iconWrapper {
+    transform: scale(1.1);
 }
 
 .featureTitle {
@@ -149,6 +153,17 @@
     font-weight: 600;
     color: var(--foreground);
     margin: 0;
+}
+
+/* Developer Section - Static, no scroll */
+.solutionBlock:last-child {
+    min-height: auto;
+    padding: 4rem 2rem;
+}
+
+.solutionBlock:last-child .stickyTitle {
+    position: relative;
+    top: 0;
 }
 
 /* Developer Image Section */

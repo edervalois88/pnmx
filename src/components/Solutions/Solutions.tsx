@@ -54,7 +54,7 @@ export default function Solutions() {
                         return (
                             <div key={idx} className={styles.featureCard} style={{ transitionDelay: `${idx * 0.1}s` }}>
                                 <div className={styles.iconWrapper} style={{ backgroundColor: `${feature.color}15` }}>
-                                    <Icon size={32} color={feature.color} />
+                                    <Icon size={48} color={feature.color} />
                                 </div>
                                 <h3 className={styles.featureTitle}>{feature.title}</h3>
                             </div>
@@ -82,7 +82,7 @@ export default function Solutions() {
                         return (
                             <div key={idx} className={styles.featureCard} style={{ transitionDelay: `${idx * 0.1}s` }}>
                                 <div className={styles.iconWrapper} style={{ backgroundColor: `${feature.color}15` }}>
-                                    <Icon size={32} color={feature.color} />
+                                    <Icon size={48} color={feature.color} />
                                 </div>
                                 <h3 className={styles.featureTitle}>{feature.title}</h3>
                             </div>
