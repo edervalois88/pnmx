@@ -51,16 +51,16 @@ export default function Hero() {
                     </div>
 
                     {/* Statistics Section - below CTAs, outside of card */}
-                    <div className={styles.heroStats} ref={users.ref}>
-                        <div className={styles.heroStatItem}>
+                    <div className={styles.heroStats}>
+                        <div className={styles.heroStatItem} ref={users.ref}>
                             <div className={styles.heroStatValue}>{users.value}</div>
                             <div className={styles.heroStatLabel}>Usuarios</div>
                         </div>
-                        <div className={styles.heroStatItem}>
+                        <div className={styles.heroStatItem} ref={processed.ref}>
                             <div className={styles.heroStatValue}>{processed.value}</div>
                             <div className={styles.heroStatLabel}>Procesados</div>
                         </div>
-                        <div className={styles.heroStatItem}>
+                        <div className={styles.heroStatItem} ref={uptime.ref}>
                             <div className={styles.heroStatValue}>{uptime.value}</div>
                             <div className={styles.heroStatLabel}>Uptime</div>
                         </div>
@@ -80,24 +80,24 @@ export default function Hero() {
                         />
                     </div>
 
-                    {/* Floating Card on top of image - smaller */}
+                    {/* Floating Card - simplified like original */}
                     <div className={styles.floatingCard} ref={revenue.ref}>
                         <div className={styles.cardHeader}>
                             <div>
-                                <div className={styles.cardLabel}>Ventas Tiempo Real</div>
-                                <div className={styles.cardValue}>
-                                    {revenue.value} <span className={styles.cardCurrency}>MXN</span>
-                                </div>
+                                <div className={styles.cardLabel}>Ventas Vivo</div>
+                                <div className={styles.cardValue}>{revenue.value}</div>
                             </div>
-                            <div className={styles.cardBadge}>+32% vs Efectivo</div>
+                            <div className={styles.cardBadge}>+32%</div>
                         </div>
-                        {/* Simple Bar Chart Visualization */}
-                        <div className={styles.chart}>
-                            <div className={styles.bar} style={{ height: '40%' }}></div>
-                            <div className={styles.bar} style={{ height: '60%' }}></div>
-                            <div className={`${styles.bar} ${styles.activeBar}`} style={{ height: '85%' }}></div>
-                            <div className={styles.bar} style={{ height: '70%' }}></div>
-                            <div className={styles.bar} style={{ height: '65%' }}></div>
+
+                        {/* Horizontal Progress Bars */}
+                        <div className={styles.progressBars}>
+                            <div className={styles.progressBar}>
+                                <div className={styles.progressFill} style={{ width: '75%', backgroundColor: '#04AEF0' }}></div>
+                            </div>
+                            <div className={styles.progressBar}>
+                                <div className={styles.progressFill} style={{ width: '50%', backgroundColor: '#3B82F6' }}></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -218,7 +218,7 @@
 
 .heroStatValue {
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--foreground);
     line-height: 1;
     margin-bottom: 0.25rem;
@@ -311,7 +311,7 @@
 
 .cardValue {
     font-size: 1.75rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--foreground);
 }
 
@@ -326,38 +326,26 @@
     padding: 0.35rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.7rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
-.chart {
+/* Progress Bars - Horizontal */
+.progressBars {
     display: flex;
-    align-items: flex-end;
-    gap: 0.5rem;
-    height: 6rem;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.bar {
-    flex: 1;
+.progressBar {
+    width: 100%;
+    height: 8px;
     background-color: var(--border);
-    border-radius: 0.5rem 0.5rem 0 0;
-    transition: background-color 0.3s;
+    border-radius: 9999px;
+    overflow: hidden;
 }
 
-.activeBar {
-    background-color: var(--primary);
-    position: relative;
-}
-
-.activeBar::after {
-    content: 'Peak!';
-    position: absolute;
-    top: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--foreground);
-    color: var(--background);
-    font-size: 0.6rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: bold;
+.progressFill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 1s ease-out;
 }
