@@ -1,0 +1,27 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #FF5A5F;
+  /* PouchNation Red-ish color approximation */
+  --secondary: #00A699;
+  --border: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --border: #333333;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

@@ -1,0 +1,61 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.primaryButton {
+  background-color: var(--primary);
+  color: white;
+}
+
+.langSwitch {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}

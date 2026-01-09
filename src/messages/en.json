@@ -1,0 +1,15 @@
+{
+    "HomePage": {
+        "title": "Guest Management & Cashless Payments",
+        "subtitle": "The leading platform for events and venues in Latin America.",
+        "getStarted": "Get Started",
+        "learnMore": "Learn More"
+    },
+    "Navigation": {
+        "solutions": "Solutions",
+        "events": "Events",
+        "venues": "Venues",
+        "about": "About Us",
+        "contact": "Contact"
+    }
+}

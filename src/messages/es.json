@@ -1,0 +1,15 @@
+{
+    "HomePage": {
+        "title": "Gestión de Invitados y Pagos Cashless",
+        "subtitle": "La plataforma líder para eventos y recintos en Latinoamérica.",
+        "getStarted": "Solicitar Demo",
+        "learnMore": "Saber Más"
+    },
+    "Navigation": {
+        "solutions": "Soluciones",
+        "events": "Eventos",
+        "venues": "Recintos",
+        "about": "Nosotros",
+        "contact": "Contacto"
+    }
+}
