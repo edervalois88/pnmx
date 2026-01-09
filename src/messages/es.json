@@ -11,5 +11,48 @@
         "venues": "Recintos",
         "about": "Nosotros",
         "contact": "Contacto"
+    },
+    "Solutions": {
+        "title": "Soluciones Integrales",
+        "subtitle": "Tecnología adaptable para cualquier tipo de experiencia.",
+        "events": {
+            "title": "Para Eventos y Festivales",
+            "desc": "Control total desde el primer boleto hasta la última bebida.",
+            "features": [
+                "Venta de Boletos",
+                "Control de Acceso (RFID)",
+                "Pagos Cashless",
+                "Reportes en Tiempo Real"
+            ]
+        },
+        "venues": {
+            "title": "Para Recintos y Hoteles",
+            "desc": "Optimiza la operación y aumenta el consumo de tus huéspedes.",
+            "features": [
+                "Check-in Rápido",
+                "Llave Digital",
+                "Puntos de Venta (POS)",
+                "Gestión de Inventario"
+            ]
+        }
+    },
+    "Features": {
+        "title": "Por qué elegir PouchNation",
+        "f1": {
+            "title": "Más Ingresos",
+            "desc": "Aumenta el gasto promedio de los asistentes hasta un 30%."
+        },
+        "f2": {
+            "title": "Datos Reales",
+            "desc": "Conoce quién consume qué y cuándo. Toma decisiones informadas."
+        },
+        "f3": {
+            "title": "Cero Fraudes",
+            "desc": "Elimina el efectivo y reduce el riesgo de robo o pérdidas."
+        },
+        "f4": {
+            "title": "Offline First",
+            "desc": "Nuestra tecnología funciona 100% sin internet. La fiesta no para."
+        }
     }
 }

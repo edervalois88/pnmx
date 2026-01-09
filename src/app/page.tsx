@@ -2,6 +2,9 @@
 
 import { useTranslations } from 'next-intl';
 import Header from '../components/Header/Header';
+import Solutions from '../components/Solutions/Solutions';
+import FeatureGrid from '../components/FeatureGrid/FeatureGrid';
+import Footer from '../components/Footer/Footer';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -20,15 +23,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Placeholder for other sections */}
-        <section id="solutions" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
-          <h2>Soluciones Tropicalizadas</h2>
-          <p>Adaptadas para el mercado Latinoamericano.</p>
-        </section>
+        <Solutions />
+        <FeatureGrid />
       </main>
-      <footer className={styles.footer}>
-        <p>© 2025 PouchNation LatAm</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

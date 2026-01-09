@@ -11,5 +11,48 @@
         "venues": "Venues",
         "about": "About Us",
         "contact": "Contact"
+    },
+    "Solutions": {
+        "title": "Comprehensive Solutions",
+        "subtitle": "Adaptable technology for any type of experience.",
+        "events": {
+            "title": "For Events & Festivals",
+            "desc": "Total control from the first ticket to the last drink.",
+            "features": [
+                "Ticketing",
+                "Access Control (RFID)",
+                "Cashless Payments",
+                "Real-time Reporting"
+            ]
+        },
+        "venues": {
+            "title": "For Venues & Hotels",
+            "desc": "Optimize operations and increase guest spending.",
+            "features": [
+                "Fast Check-in",
+                "Digital Key",
+                "Point of Sale (POS)",
+                "Inventory Management"
+            ]
+        }
+    },
+    "Features": {
+        "title": "Why Choose PouchNation",
+        "f1": {
+            "title": "More Revenue",
+            "desc": "Increase average attendee spending by up to 30%."
+        },
+        "f2": {
+            "title": "Real Data",
+            "desc": "Know who consumes what and when. Make informed decisions."
+        },
+        "f3": {
+            "title": "Zero Fraud",
+            "desc": "Eliminate cash and reduce the risk of theft or loss."
+        },
+        "f4": {
+            "title": "Offline First",
+            "desc": "Our technology works 100% without internet. The party never stops."
+        }
     }
 }
