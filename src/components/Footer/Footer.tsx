@@ -3,6 +3,8 @@
 import { useTranslations } from 'next-intl';
 import styles from './Footer.module.css';
 
+import Link from 'next/link';
+
 export default function Footer() {
     const t = useTranslations();
 
@@ -19,17 +21,19 @@ export default function Footer() {
 
                     <div className={styles.linksCol}>
                         <div className={styles.linkGroup}>
-                            <h4>{t('Navigation.solutions')}</h4>
+                            <h4>Soluciones</h4>
                             <ul>
-                                <li><a href="#events">{t('Navigation.events')}</a></li>
-                                <li><a href="#venues">{t('Navigation.venues')}</a></li>
+                                <li><Link href="/pouchvenues">PouchVenues</Link></li>
+                                <li><Link href="/pouchevents">PouchEvents</Link></li>
+                                <li><Link href="/pouchconnect">PouchConnect (API)</Link></li>
                             </ul>
                         </div>
                         <div className={styles.linkGroup}>
-                            <h4>Company</h4>
+                            <h4>Compañía</h4>
                             <ul>
-                                <li><a href="#about">{t('Navigation.about')}</a></li>
-                                <li><a href="#contact">{t('Navigation.contact')}</a></li>
+                                <li><Link href="/about-us">Nosotros</Link></li>
+                                <li><Link href="/contact">Contacto</Link></li>
+                                <li><Link href="/recursos-ia">Recursos IA</Link></li>
                             </ul>
                         </div>
                     </div>

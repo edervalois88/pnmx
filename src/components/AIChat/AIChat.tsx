@@ -14,7 +14,7 @@ export default function AIChat() {
     const [messages, setMessages] = useState<Message[]>([
         {
             role: 'assistant',
-            content: '¡Hola! Soy el asistente virtual de PouchNATION. ¿En qué puedo ayudarte hoy? Puedo responder preguntas sobre nuestras soluciones para venues, eventos o APIs.',
+            content: '¡Hola! 👋 Soy tu experto en PouchNATION. ¿Te interesa saber cómo aumentar tus ventas un 30% en tu venue o necesitas ayuda técnica para tu evento?',
         },
     ]);
     const [input, setInput] = useState('');
