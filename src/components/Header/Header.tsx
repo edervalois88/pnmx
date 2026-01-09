@@ -61,15 +61,11 @@ export default function Header() {
                     </div>
                 </div>
 
-                <Link href="#productos" className={styles.navLink}>
-                    Productos
-                </Link>
-
                 <Link href="/recursos-ia" className={`${styles.navLink} ${pathname === '/recursos-ia' ? styles.active : ''}`}>
                     <span className={styles.iconText}>⚡</span> Recursos IA
                 </Link>
 
-                <Link href="#nosotros" className={styles.navLink}>
+                <Link href="/about-us" className={`${styles.navLink} ${pathname === '/about-us' ? styles.active : ''}`}>
                     Nosotros
                 </Link>
             </nav>
