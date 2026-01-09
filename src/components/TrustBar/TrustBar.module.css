@@ -31,9 +31,10 @@
     justify-content: center;
     opacity: 0.7;
     transition: opacity 0.3s;
-    background-color: #ffffff;
+    background-color: transparent;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    height: 80px;
 }
 
 .logoContainer:hover {
