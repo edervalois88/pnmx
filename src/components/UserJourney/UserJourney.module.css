@@ -1,5 +1,5 @@
 .section {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     background: radial-gradient(circle at top right, rgba(4, 174, 240, 0.05) 0%, transparent 50%),
         radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
     overflow: hidden;
