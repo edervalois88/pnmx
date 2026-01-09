@@ -71,6 +71,7 @@ export default function FeaturesShowcase() {
                                         className={styles.backgroundImage}
                                     />
                                     <div className={styles.overlay} style={{ background: `linear-gradient(135deg, ${feature.color}40 0%, ${feature.color}20 100%)` }}></div>
+                                    <div className={styles.textOverlay}></div>
                                 </div>
 
                                 {/* Content */}
