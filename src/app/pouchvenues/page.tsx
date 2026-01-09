@@ -98,26 +98,36 @@ export default function PouchVenues() {
                         </p>
                     </div>
 
-                    <div className={`${styles.carousel} ${carouselReveal.isVisible ? styles.visible : ''}`}>
-                        {venueTypes.map((venue) => (
-                            <div
-                                key={venue.id}
-                                className={styles.venueCard}
-                                onMouseEnter={() => setHoveredVenue(venue.id)}
-                                onMouseLeave={() => setHoveredVenue(null)}
-                            >
-                                <div className={styles.venueImageWrapper}>
-                                    <Image
-                                        src={venue.image}
-                                        alt={venue.name}
-                                        fill
-                                        className={`${styles.venueImage} ${hoveredVenue === venue.id ? styles.zoomed : ''}`}
-                                    />
-                                    <div className={styles.venueOverlay}></div>
+                    <div className={`${styles.carouselContainer} ${carouselReveal.isVisible ? styles.visible : ''}`}>
+                        {venueTypes.map((venue) => {
+                            const isActive = hoveredVenue === venue.id;
+                            const isOtherActive = hoveredVenue !== null && hoveredVenue !== venue.id;
+
+                            return (
+                                <div
+                                    key={venue.id}
+                                    className={`${styles.expandableCard} ${isActive ? styles.active : ''} ${isOtherActive ? styles.collapsed : ''}`}
+                                    onMouseEnter={() => setHoveredVenue(venue.id)}
+                                    onMouseLeave={() => setHoveredVenue(null)}
+                                >
+                                    {/* Background Image */}
+                                    <div className={styles.cardBackground}>
+                                        <Image
+                                            src={venue.image}
+                                            alt={venue.name}
+                                            fill
+                                            className={styles.backgroundImage}
+                                        />
+                                        <div className={styles.overlay}></div>
+                                    </div>
+
+                                    {/* Venue Name */}
+                                    <div className={styles.cardContent}>
+                                        <h3 className={styles.venueName}>{venue.name}</h3>
+                                    </div>
                                 </div>
-                                <div className={styles.venueName}>{venue.name}</div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </section>
 

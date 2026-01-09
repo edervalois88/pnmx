@@ -95,80 +95,130 @@
     margin: 0 auto;
 }
 
-/* Carousel with Hover Zoom */
-.carousel {
+/* Expandable Carousel Container */
+.carouselContainer {
     display: flex;
     gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    height: 500px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
 }
 
-.carousel.visible {
+.carouselContainer.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
+@media (max-width: 968px) {
+    .carouselContainer {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
 }
 
-.venueCard {
+/* Expandable Card */
+.expandableCard {
     position: relative;
-    min-width: 280px;
-    height: 380px;
+    flex: 1;
     border-radius: 1.5rem;
     overflow: hidden;
-    scroll-snap-align: start;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.venueCard:hover {
-    transform: translateY(-8px);
+.expandableCard.active {
+    flex: 2.5;
 }
 
-.venueImageWrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.expandableCard.collapsed {
+    flex: 0.5;
 }
 
-.venueImage {
+@media (max-width: 968px) {
+    .expandableCard {
+        min-height: 300px;
+        flex: none !important;
+    }
+
+    .expandableCard.active {
+        min-height: 400px;
+    }
+
+    .expandableCard.collapsed {
+        min-height: 100px;
+    }
+}
+
+/* Background Image */
+.cardBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.backgroundImage {
     object-fit: cover;
     transition: transform 0.6s ease-out;
 }
 
-.venueImage.zoomed {
-    transform: scale(1.15);
+.expandableCard:hover .backgroundImage {
+    transform: scale(1.05);
 }
 
-.venueOverlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+    transition: opacity 0.6s;
+}
+
+.expandableCard.collapsed .overlay {
+    opacity: 0.9;
+}
+
+/* Card Content */
+.cardContent {
+    position: relative;
     z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+    color: white;
 }
 
 .venueName {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    right: 2rem;
-    z-index: 2;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: white;
+    margin: 0;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: font-size 0.6s, opacity 0.3s;
+    opacity: 1;
+}
+
+.expandableCard.collapsed .venueName {
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+@media (max-width: 968px) {
+    .venueName {
+        font-size: 1.75rem;
+    }
+
+    .expandableCard.collapsed .venueName {
+        font-size: 1.25rem;
+        opacity: 0;
+    }
 }
 
 /* Sticky Scroll Sections */
