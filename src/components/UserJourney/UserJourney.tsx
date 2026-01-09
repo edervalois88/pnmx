@@ -113,31 +113,6 @@ export default function UserJourney() {
                         );
                     })}
                 </div>
-
-                {/* Bottom Stats */}
-                <div className={`${styles.stats} ${reveal.isVisible ? styles.visible : ''}`}>
-                    <div className={styles.statCard}>
-                        <div className={styles.statIcon}>
-                            <Users size={28} color="#04AEF0" />
-                        </div>
-                        <div className={styles.statValue}>10M+</div>
-                        <div className={styles.statLabel}>Usuarios Satisfechos</div>
-                    </div>
-                    <div className={styles.statCard}>
-                        <div className={styles.statIcon}>
-                            <CreditCard size={28} color="#10B981" />
-                        </div>
-                        <div className={styles.statValue}>$500M</div>
-                        <div className={styles.statLabel}>Procesados</div>
-                    </div>
-                    <div className={styles.statCard}>
-                        <div className={styles.statIcon}>
-                            <CheckCircle size={28} color="#8B5CF6" />
-                        </div>
-                        <div className={styles.statValue}>99.9%</div>
-                        <div className={styles.statLabel}>Uptime</div>
-                    </div>
-                </div>
             </div>
         </section>
     );
