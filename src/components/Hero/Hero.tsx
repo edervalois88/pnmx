@@ -24,6 +24,7 @@ export default function Hero() {
     return (
         <section className={styles.heroSection}>
             <div className={styles.container}>
+                {/* Left Column - Content */}
                 <div className={styles.content}>
                     <div className={styles.badge}>
                         <span className={styles.badgeDot}></span>
@@ -48,7 +49,7 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    {/* Statistics Section - fills the empty space */}
+                    {/* Statistics Section - below CTAs */}
                     <div className={styles.statsSection} ref={customers.ref}>
                         <div className={styles.statItem}>
                             <div className={styles.statValue}>{customers.value}</div>
@@ -65,24 +66,26 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Mockup Overlay Card - Now standalone with animated counter */}
-                <div className={styles.floatingCard} ref={revenue.ref}>
-                    <div className={styles.cardHeader}>
-                        <div>
-                            <div className={styles.cardLabel}>Ventas Tiempo Real</div>
-                            <div className={styles.cardValue}>
-                                {revenue.value} <span className={styles.cardCurrency}>MXN</span>
+                {/* Right Column - Visual Card */}
+                <div className={styles.visualColumn}>
+                    <div className={styles.floatingCard} ref={revenue.ref}>
+                        <div className={styles.cardHeader}>
+                            <div>
+                                <div className={styles.cardLabel}>Ventas Tiempo Real</div>
+                                <div className={styles.cardValue}>
+                                    {revenue.value} <span className={styles.cardCurrency}>MXN</span>
+                                </div>
                             </div>
+                            <div className={styles.cardBadge}>+32% vs Efectivo</div>
                         </div>
-                        <div className={styles.cardBadge}>+32% vs Efectivo</div>
-                    </div>
-                    {/* Simple Bar Chart Visualization */}
-                    <div className={styles.chart}>
-                        <div className={styles.bar} style={{ height: '40%' }}></div>
-                        <div className={styles.bar} style={{ height: '60%' }}></div>
-                        <div className={`${styles.bar} ${styles.activeBar}`} style={{ height: '85%' }}></div>
-                        <div className={styles.bar} style={{ height: '70%' }}></div>
-                        <div className={styles.bar} style={{ height: '65%' }}></div>
+                        {/* Simple Bar Chart Visualization */}
+                        <div className={styles.chart}>
+                            <div className={styles.bar} style={{ height: '40%' }}></div>
+                            <div className={styles.bar} style={{ height: '60%' }}></div>
+                            <div className={`${styles.bar} ${styles.activeBar}`} style={{ height: '85%' }}></div>
+                            <div className={styles.bar} style={{ height: '70%' }}></div>
+                            <div className={styles.bar} style={{ height: '65%' }}></div>
+                        </div>
                     </div>
                 </div>
             </div>
