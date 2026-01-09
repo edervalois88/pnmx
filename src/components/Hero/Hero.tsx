@@ -8,7 +8,12 @@ import styles from './Hero.module.css';
 export default function Hero() {
     const t = useTranslations('HomePage');
 
-    // Animated counter for revenue
+    // Animated counters for statistics
+    const customers = useCountUp({ end: 200, duration: 2000, suffix: '+' });
+    const dataPoints = useCountUp({ end: 290, duration: 2000, suffix: 'M' });
+    const transactions = useCountUp({ end: 100, duration: 2000, prefix: '$', suffix: 'M' });
+
+    // Animated counter for revenue card
     const revenue = useCountUp({
         end: 1245890,
         duration: 2500,
@@ -41,6 +46,22 @@ export default function Hero() {
                         <Link href="#video" className={styles.secondaryButton}>
                             Ver Video
                         </Link>
+                    </div>
+
+                    {/* Statistics Section - fills the empty space */}
+                    <div className={styles.statsSection} ref={customers.ref}>
+                        <div className={styles.statItem}>
+                            <div className={styles.statValue}>{customers.value}</div>
+                            <div className={styles.statLabel}>Clientes Satisfechos</div>
+                        </div>
+                        <div className={styles.statItem}>
+                            <div className={styles.statValue}>{dataPoints.value}</div>
+                            <div className={styles.statLabel}>Datos Recolectados</div>
+                        </div>
+                        <div className={styles.statItem}>
+                            <div className={styles.statValue}>{transactions.value}</div>
+                            <div className={styles.statLabel}>Transacciones</div>
+                        </div>
                     </div>
                 </div>
 

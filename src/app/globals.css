@@ -1,10 +1,10 @@
 :root {
-  /* Default to Dark based on user preference, or system preference. 
-     We will control this via data-theme attribute on the html/body tag. */
+  /* Default to Light theme with original PouchNation colors */
   --background: #ffffff;
   --foreground: #111827;
-  --primary: #00D1C1;
-  --primary-dark: #00b8a9;
+  --primary: #04AEF0;
+  /* Original PouchNation cyan */
+  --primary-dark: #0398d6;
   --secondary: #FF4785;
   --accent: #FF4785;
   --card-bg: #f9fafb;
@@ -16,8 +16,9 @@
 [data-theme='dark'] {
   --background: #0B1120;
   --foreground: #ffffff;
-  --primary: #00D1C1;
-  --primary-dark: #00b8a9;
+  --primary: #04AEF0;
+  /* Keep same cyan in dark mode */
+  --primary-dark: #0398d6;
   --secondary: #FF4785;
   --accent: #FF4785;
   --card-bg: #1F2937;

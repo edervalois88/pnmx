@@ -106,7 +106,7 @@
 }
 
 .gradientText {
-    background: linear-gradient(to right, #00D1C1, #60A5FA);
+    background: linear-gradient(to right, #04AEF0, #60A5FA);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -128,11 +128,12 @@
 .ctaGroup {
     display: flex;
     gap: 1rem;
+    margin-bottom: 3rem;
 }
 
 .ctaButton {
     background-color: var(--primary);
-    color: #0B1120;
+    color: #fff;
     padding: 1rem 2rem;
     border-radius: 9999px;
     font-weight: 700;
@@ -141,11 +142,11 @@
     font-size: 1.125rem;
     transition: all 0.3s;
     text-decoration: none;
-    box-shadow: 0 0 20px rgba(0, 209, 193, 0.3);
+    box-shadow: 0 0 20px rgba(4, 174, 240, 0.3);
 }
 
 .ctaButton:hover {
-    background-color: #fff;
+    background-color: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -165,6 +166,41 @@
 .secondaryButton:hover {
     border-color: var(--primary);
     color: var(--primary);
+}
+
+/* Statistics Section */
+.statsSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .statsSection {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.statItem {
+    text-align: left;
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: capitalize;
 }
 
 /* Floating Card Styles - Now standalone and bigger */
