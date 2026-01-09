@@ -135,7 +135,7 @@
 
 .title {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--foreground);
@@ -218,7 +218,7 @@
 
 .heroStatValue {
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--foreground);
     line-height: 1;
     margin-bottom: 0.25rem;
@@ -311,7 +311,7 @@
 
 .cardValue {
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--foreground);
 }
 
