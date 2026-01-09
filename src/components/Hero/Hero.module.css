@@ -55,11 +55,11 @@
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 6rem;
     align-items: center;
     position: relative;
     z-index: 2;
@@ -204,13 +204,32 @@
     color: var(--primary);
 }
 
-/* Statistics Section */
-.statsSection {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* Hero Statistics - Below CTAs */
+.heroStats {
+    display: flex;
     gap: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    margin-top: 1rem;
+}
+
+.heroStatItem {
+    text-align: left;
+}
+
+.heroStatValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--foreground);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.heroStatLabel {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 @media (max-width: 768px) {
@@ -241,14 +260,16 @@
 
 /* Floating Card Styles - Now in right column */
 .floatingCard {
-    position: relative;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
-    border-radius: 1.5rem;
-    padding: 2.5rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    max-width: 450px;
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    width: auto;
+    max-width: 320px;
     transform: rotate(-2deg);
     transition: all 0.3s;
     z-index: 20;

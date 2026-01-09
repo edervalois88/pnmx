@@ -9,10 +9,10 @@ import styles from './Hero.module.css';
 export default function Hero() {
     const t = useTranslations('HomePage');
 
-    // Animated counters for statistics
-    const customers = useCountUp({ end: 200, duration: 2000, suffix: '+' });
-    const dataPoints = useCountUp({ end: 290, duration: 2000, suffix: 'M' });
-    const transactions = useCountUp({ end: 100, duration: 2000, prefix: '$', suffix: 'M' });
+    // Animated counters for hero stats (below image)
+    const users = useCountUp({ end: 10, duration: 2000, suffix: 'M+' });
+    const processed = useCountUp({ end: 500, duration: 2000, prefix: '$', suffix: 'M' });
+    const uptime = useCountUp({ end: 99.9, duration: 2000, decimals: 1, suffix: '%' });
 
     // Animated counter for revenue card
     const revenue = useCountUp({
@@ -50,19 +50,19 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    {/* Statistics Section - below CTAs */}
-                    <div className={styles.statsSection} ref={customers.ref}>
-                        <div className={styles.statItem}>
-                            <div className={styles.statValue}>{customers.value}</div>
-                            <div className={styles.statLabel}>Clientes Satisfechos</div>
+                    {/* Statistics Section - below CTAs, outside of card */}
+                    <div className={styles.heroStats} ref={users.ref}>
+                        <div className={styles.heroStatItem}>
+                            <div className={styles.heroStatValue}>{users.value}</div>
+                            <div className={styles.heroStatLabel}>Usuarios</div>
                         </div>
-                        <div className={styles.statItem}>
-                            <div className={styles.statValue}>{dataPoints.value}</div>
-                            <div className={styles.statLabel}>Datos Recolectados</div>
+                        <div className={styles.heroStatItem}>
+                            <div className={styles.heroStatValue}>{processed.value}</div>
+                            <div className={styles.heroStatLabel}>Procesados</div>
                         </div>
-                        <div className={styles.statItem}>
-                            <div className={styles.statValue}>{transactions.value}</div>
-                            <div className={styles.statLabel}>Transacciones</div>
+                        <div className={styles.heroStatItem}>
+                            <div className={styles.heroStatValue}>{uptime.value}</div>
+                            <div className={styles.heroStatLabel}>Uptime</div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function Hero() {
                         />
                     </div>
 
-                    {/* Floating Card on top of image */}
+                    {/* Floating Card on top of image - smaller */}
                     <div className={styles.floatingCard} ref={revenue.ref}>
                         <div className={styles.cardHeader}>
                             <div>
