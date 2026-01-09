@@ -1,12 +1,20 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
-import Link from 'next/link'; // Import Link
+import Link from 'next/link';
+import { useCountUp } from '../../hooks/useCountUp';
 import styles from './Hero.module.css';
 
 export default function Hero() {
     const t = useTranslations('HomePage');
+
+    // Animated counter for revenue
+    const revenue = useCountUp({
+        end: 1245890,
+        duration: 2500,
+        prefix: '$',
+        suffix: ''
+    });
 
     return (
         <section className={styles.heroSection}>
@@ -36,12 +44,14 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Mockup Overlay Card - Now standalone */}
-                <div className={styles.floatingCard}>
+                {/* Mockup Overlay Card - Now standalone with animated counter */}
+                <div className={styles.floatingCard} ref={revenue.ref}>
                     <div className={styles.cardHeader}>
                         <div>
                             <div className={styles.cardLabel}>Ventas Tiempo Real</div>
-                            <div className={styles.cardValue}>$1,245,890 <span className={styles.cardCurrency}>MXN</span></div>
+                            <div className={styles.cardValue}>
+                                {revenue.value} <span className={styles.cardCurrency}>MXN</span>
+                            </div>
                         </div>
                         <div className={styles.cardBadge}>+32% vs Efectivo</div>
                     </div>
