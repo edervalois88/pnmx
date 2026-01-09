@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { ThemeProvider } from '../context/ThemeContext';
+import AIChat from '../components/AIChat/AIChat';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,6 +35,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             {children}
+            <AIChat />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
