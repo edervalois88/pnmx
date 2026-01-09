@@ -197,26 +197,38 @@
 }
 
 .venueName {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 400;
     margin: 0;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    transition: font-size 0.6s, opacity 0.3s;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: font-size 0.6s, font-weight 0.6s, opacity 0.3s;
     opacity: 1;
 }
 
+.expandableCard.active .venueName {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
 .expandableCard.collapsed .venueName {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    font-weight: 300;
     opacity: 0;
 }
 
 @media (max-width: 968px) {
     .venueName {
-        font-size: 1.75rem;
+        font-size: 1.125rem;
+    }
+
+    .expandableCard.active .venueName {
+        font-size: 2rem;
+        font-weight: 700;
     }
 
     .expandableCard.collapsed .venueName {
-        font-size: 1.25rem;
+        font-size: 0.875rem;
+        font-weight: 300;
         opacity: 0;
     }
 }

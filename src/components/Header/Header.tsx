@@ -44,13 +44,13 @@ export default function Header() {
             </div>
 
             <nav className={styles.nav}>
-                <Link href="/" className={`${styles.navLink} ${styles.active}`}>
+                <Link href="/" className={`${styles.navLink} ${pathname === '/' || pathname === '/es' ? styles.active : ''}`}>
                     Inicio
                 </Link>
 
                 {/* Dropdown for Solutions */}
                 <div className={styles.dropdown}>
-                    <span className={styles.navLink}>
+                    <span className={`${styles.navLink} ${pathname.includes('/pouch') ? styles.active : ''}`}>
                         Soluciones <ChevronDown size={14} className={styles.arrowDown} />
                     </span>
                     <div className={styles.dropdownContent}>
@@ -64,7 +64,7 @@ export default function Header() {
                     Productos
                 </Link>
 
-                <Link href="/recursos-ia" className={styles.navLink}>
+                <Link href="/recursos-ia" className={`${styles.navLink} ${pathname === '/recursos-ia' ? styles.active : ''}`}>
                     <span className={styles.iconText}>⚡</span> Recursos IA
                 </Link>
 
