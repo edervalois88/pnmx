@@ -12,21 +12,17 @@
   transition: background-color 0.3s ease;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 968px) {
   .header {
-    padding: 0.75rem 1rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .header {
-    padding: 0.75rem 1rem;
+    padding: 1rem;
   }
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
+  z-index: 101;
+  /* Ensure logo stays above menu overlay */
 }
 
 .logoLink {
@@ -56,10 +52,70 @@
   filter: none !important;
 }
 
+/* Mobile Menu Button */
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+  z-index: 101;
+  padding: 0.5rem;
+}
+
+@media (max-width: 968px) {
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Menu Container (Nav + Actions) */
+.menuContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+@media (max-width: 968px) {
+  .menuContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+  }
+
+  .menuContainer.mobileOpen {
+    transform: translateX(0);
+  }
+}
+
 .nav {
   display: flex;
   gap: 2rem;
   align-items: center;
+}
+
+@media (max-width: 968px) {
+  .nav {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .navLink {
@@ -71,6 +127,15 @@
   padding: 0.5rem 0;
   position: relative;
   display: inline-block;
+}
+
+@media (max-width: 968px) {
+  .navLink {
+    font-size: 1.25rem;
+    display: block;
+    padding: 0.75rem;
+    width: 100%;
+  }
 }
 
 .navLink:hover {
@@ -91,6 +156,18 @@
   height: 3px;
   background-color: var(--primary);
   border-radius: 2px 2px 0 0;
+}
+
+@media (max-width: 968px) {
+  .navLink.active::after {
+    display: none;
+    /* Remove underline on mobile */
+  }
+
+  .navLink.active {
+    background-color: rgba(4, 174, 240, 0.1);
+    border-radius: 0.5rem;
+  }
 }
 
 .iconText {
@@ -117,9 +194,43 @@
   left: 0;
 }
 
+@media (max-width: 968px) {
+  .navDropdown {
+    width: 100%;
+  }
+
+  .navDropdown .dropdownContent {
+    position: static;
+    display: none;
+    /* Keep hidden until clicked/hovered logic if needed, but for simplicity let's make it always visible or clickable */
+    /* For simple mobile menu, often better to just list items or make it clickable. 
+       Let's make it static and visible if parent is active or just stack them */
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    background: transparent;
+    min-width: auto;
+    text-align: center;
+  }
+
+  .dropdown:hover .dropdownContent {
+    display: block;
+    position: static;
+  }
+
+  /* Mobile specific adjustment: Center the content */
+  .navDropdown .dropdownItem {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+}
+
 .dropdown:hover .dropdownContent {
   display: block;
 }
+
 
 .dropdownItem {
   color: var(--foreground);
@@ -140,6 +251,25 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+@media (max-width: 968px) {
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .actions .button {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .langSwitch {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .button {
